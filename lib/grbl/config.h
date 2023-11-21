@@ -70,8 +70,8 @@
 #endif
 #if N_AXIS > 3
   #define AXIS_4 3
-  //#define AXIS_4_NAME 'A' // Letter of axis number 4
-  #define AXIS_4_NAME 'U' // Letter of axis number 4 KH
+  #define AXIS_4_NAME 'A' // Letter of axis number 4
+  // #define AXIS_4_NAME 'V' // Letter of axis number 4 KH
 #endif
 #if N_AXIS > 4
   #define AXIS_5 4
