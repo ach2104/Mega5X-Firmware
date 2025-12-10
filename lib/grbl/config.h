@@ -52,16 +52,16 @@
   // 4, 5 & 6 axis support only for RAMPS 1.4 (for the moment :-)...)
   //#define N_AXIS 5            // Number of axes
   //#define N_AXIS_LINEAR 3     // Number of linears axis
-  #define N_AXIS  4          // Number of axes KH
-  #define N_AXIS_LINEAR 4     // Number of linears axis KH
+  #define N_AXIS  5          // Number of axes KH
+  #define N_AXIS_LINEAR 5     // Number of linears axis KH
 #else
   #define N_AXIS 3 // Number of axes = 3 if not DEFAULTS_RAMPS_BOARD
 #endif
 
 #define AXIS_1 0        // Axis indexing value. Must start with 0 and be continuous.
-#define AXIS_1_NAME 'X' // Axis names must be in X, Y, Z, A, B, C, U, V & W.
+#define AXIS_1_NAME 'Y' // Axis names must be in X, Y, Z, A, B, C, U, V & W.
 #define AXIS_2 1
-#define AXIS_2_NAME 'Y'
+#define AXIS_2_NAME 'Z'
 #define AXIS_3 2
 #define AXIS_3_NAME 'Z'
 
@@ -70,12 +70,11 @@
 #endif
 #if N_AXIS > 3
   #define AXIS_4 3
-  #define AXIS_4_NAME 'A' // Letter of axis number 4
-  // #define AXIS_4_NAME 'V' // Letter of axis number 4 KH
+  #define AXIS_4_NAME 'Y'
 #endif
 #if N_AXIS > 4
   #define AXIS_5 4
-  #define AXIS_5_NAME 'V' // Letter of axis number 5
+  #define AXIS_5_NAME 'X' // Letter of axis number 5
 #endif
 #if N_AXIS > 5
   #define AXIS_6 5
@@ -178,11 +177,9 @@
     #define HOMING_CYCLE_2 (1<<AXIS_2) // Home Y axis
     #define HOMING_CYCLE_3 (1<<AXIS_3) // Home Z axis
   #elif N_AXIS == 5 // 5 axis : homing
-    #define HOMING_CYCLE_0 (1<<AXIS_3) // Home Z axis first to clear workspace.
-    #define HOMING_CYCLE_1 (1<<AXIS_4) // Home 4th axis (A)
-    #define HOMING_CYCLE_2 (1<<AXIS_5) // Home 5th axis (B)
-    #define HOMING_CYCLE_3 (1<<AXIS_1) // Home X axis
-    #define HOMING_CYCLE_4 (1<<AXIS_2) // Home Y axis
+    #define HOMING_CYCLE_0 (1<<AXIS_2 || 1<<AXIS_4) // Home Z axis first to clear workspace.
+    #define HOMING_CYCLE_1 (1<<AXIS_1 || 1<<AXIS_2) // Home Y axis
+    #define HOMING_CYCLE_2 (1<<AXIS_5) // Home X axis
   #elif N_AXIS == 6 // 6 axis : homing
     #define HOMING_CYCLE_0 (1<<AXIS_3) // Home Z axis first to clear workspace.
     #define HOMING_CYCLE_1 (1<<AXIS_4) // Home 4th axis (A)
