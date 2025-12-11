@@ -6,3 +6,7 @@ Adjusted Axis assignment:
 - axis_3 --> Z-Right
 - axis_4 --> Y-Right
 - axis_5 --> X
+
+After flashing this firmware, reset board to defaults:
+Send via Putty: $RST=*
+
