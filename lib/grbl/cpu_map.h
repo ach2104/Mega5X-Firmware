@@ -263,7 +263,7 @@
   #if N_AXIS > 3
     //#define MIN_LIMIT_BIT_3 7 // Axis number 4 : RAMPS AUX2 pin D42
     //#define MIN_LIMIT_BIT_3 6 // Axis number 4 : MKS Gen L V2.0 pin D43
-    #define MIN_LIMIT_BIT_3 0 //  Axis number 4 : MKS Gen L V2.0 pin EXP1 D37
+    #define MIN_LIMIT_BIT_3 0 //  Axis number 4 : RAMPS AUX3 pin D49
   #endif
   #if N_AXIS > 4
     #define MIN_LIMIT_BIT_4 5 // Axis number 5 : RAMPS AUX2 pin D44
